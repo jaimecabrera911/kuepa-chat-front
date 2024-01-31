@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-4">
+        <div class="card mx-4 my-4">
+            <div class="card-header">
+                <ul class="nav nav-pills card-header-pills">
+                    <span [ngStyle]="{'color': 'gray'}">CHAT CLASE DESARROLLO WEB</span>
+                </ul>
+            </div>
+
+            <div #scrollChat [scrollTop]="scrollChat.scrollHeight" class="card-body" style="overflow-y: scroll; height: 360px;">
+                <ul class="list-group list-group-flush">
+
+                    <li class="list-group-item list-group-item-light" *ngFor="let message of
+      messageList">
+                        <span>
+        <span [ngStyle]="{'color': 'red'}">user :</span> dice: {{message}}
+                        </span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card-footer">
+                <div class="form-inline">
+                    <div class="form-group mx-3">
+                        <input [(ngModel)]="newMessage" (keyup)="$event.keyCode == 13 && sendMessage()" class="form-control" />
+                        <button (click)="sendMessage()" class="btn btn-primary">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-8">
+        <div class="card mx-4 my-4">
+            <iframe height="400" src="https://www.youtube.com/embed/3nYLTiY5skU?si=B4QZnSJMxlXsv2B_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
